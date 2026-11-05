@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint | Hospital Appointments</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar"><a class="brand" href="#"><span class="brand-icon">✚</span> CarePoint</a><nav><a href="#overview">Overview</a><a href="#patients">Patients</a><a href="#doctors">Doctors</a><a href="#appointments">Appointments</a></nav><span class="admin-pill">● Admin Portal</span></header>
+<main>
+<section class="hero" id="overview"><div class="hero-copy"><p class="eyebrow">HOSPITAL APPOINTMENT MANAGEMENT</p><h1>Better care starts<br>with <span>better connection.</span></h1><p class="hero-text">A simple, organized way to manage patients, find specialists and coordinate appointments.</p><a class="primary-btn" href="#appointments">＋ Book an appointment</a></div><div class="hero-art"><div class="circle c1"></div><div class="circle c2"></div><div class="medical-card"><div class="cross">✚</div><strong>Care that connects</strong><small>Patients · Doctors · Appointments</small><div class="pulse">♥ <span>CarePoint Health</span></div></div><div class="floating f1">✦ Trusted care</div><div class="floating f2">24/7 records</div></div></section>
+<section class="stats"><article><span>01</span><div><strong id="patientCount">—</strong><small>Registered patients</small></div></article><article><span>02</span><div><strong id="doctorCount">—</strong><small>Available doctors</small></div></article><article><span>03</span><div><strong id="appointmentCount">—</strong><small>Total appointments</small></div></article><article><span>04</span><div><strong id="pendingCount">—</strong><small>Pending appointments</small></div></article></section>
+
+<section class="content-section" id="patients"><div class="section-head"><div><p class="eyebrow">PATIENT DIRECTORY</p><h2>Patient records</h2><p>Register, update and manage patient information.</p></div><button class="primary-btn" onclick="openPatient()">＋ Add patient</button></div><div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Patient</th><th>Email</th><th>Phone</th><th>Gender</th><th>Age</th><th>Actions</th></tr></thead><tbody id="patientsBody"></tbody></table></div></div></section>
+
+<section class="content-section" id="doctors"><div class="section-head"><div><p class="eyebrow">SPECIALIST DIRECTORY</p><h2>Meet our doctors</h2><p>Find doctors by name or area of specialization.</p></div><button class="primary-btn" onclick="openDoctor()">＋ Add doctor</button></div><div class="filter-row"><input id="doctorSearch" placeholder="Search doctor name or specialization..." oninput="loadDoctors()"><select id="specialtyFilter" onchange="loadDoctors()"><option value="">All specializations</option></select></div><div class="doctor-grid" id="doctorsGrid"></div></section>
+
+<section class="content-section" id="appointments"><div class="section-head"><div><p class="eyebrow">SCHEDULE & TRACK</p><h2>Appointments</h2><p>Book visits and keep appointment status up to date.</p></div><button class="primary-btn" onclick="openAppointment()">＋ New appointment</button></div><div class="panel"><div class="table-wrap"><table><thead><tr><th>ID</th><th>Patient</th><th>Doctor</th><th>Specialization</th><th>Date</th><th>Time</th><th>Status</th><th>Actions</th></tr></thead><tbody id="appointmentsBody"></tbody></table></div></div></section>
+<footer>© 2026 CarePoint Hospital Management · Your health, thoughtfully managed.</footer>
+</main>
+
+<div class="modal-backdrop" id="modal"><div class="modal"><button class="close" onclick="closeModal()">×</button><p class="eyebrow" id="modalEyebrow">RECORD</p><h2 id="modalTitle">Add record</h2><form id="recordForm"></form></div></div>
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body></html>
